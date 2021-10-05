@@ -5,24 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements
-OnInit
-
+export class AppComponent 
 {
-  title = 'AngularLearning';
-  childElements = [{name: 'element1' , hour: 11}] ;
+  // remember ! is for strict class checking
+  numbers: number[];
+  
   constructor()
   {
-
-  }
-  ngOnInit(){
-    this.childElements.push({name: 'element2' , hour: 3});
+    this.numbers = [1,2,3,4, 6] ;
   }
 
-  doSomething(emittedData: {name: string , age: number})
-  {
-    console.log(emittedData.name);
-    console.log(emittedData.age);
-  }
+
+  
 
 }

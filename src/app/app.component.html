@@ -1,20 +1,16 @@
 <div class="container">
-  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <child-element (someChildEvent)="doSomething($event)">
-        hello
-      </child-element>
-      <child-element
-        *ngFor="let childElement of childElements"
-        [element]="childElement"
-        [name]="childElement.name">
-        <p #contentParagraph>
-          <strong *ngIf="childElement.name === 'element1'" style="color: red">{{ childElement.name }}</strong>
-          <em *ngIf="childElement.name === 'element2'">{{ childElement.name }}</em>
-        </p>
-      </child-element> 
+      <button
+        class="btn btn-primary"
+        >Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <li *ngFor = "let number of numbers"
+          class="list-group-item">
+          {{number}}
+        </li>
+      </ul>
     </div>
   </div>
-  <p> parent paragraph to test viewEncapsulation</p>
 </div>
