@@ -19,4 +19,10 @@ OnInit
     this.childElements.push({name: 'element2' , hour: 3});
   }
 
+  doSomething(emittedData: {name: string , age: number})
+  {
+    console.log(emittedData.name);
+    console.log(emittedData.age);
+  }
+
 }
