@@ -1,0 +1,15 @@
+<div
+  class="panel panel-default">
+  <input
+      type="text"
+      class="form-control"
+      #serverNameInput>
+    
+  <button (click)="raiseEventToParent(serverNameInput)">Try Output</button>
+  <button (click)="onLikeClick()" [ngStyle]="liked?{'background-color': 'red'} : {'background-color': 'blue'}" #likeButton>{{buttonName}}</button>
+  <div class="panel-heading" #heading></div>
+  <div class="panel-body">
+      <ng-content></ng-content> 
+  </div>
+  <p> child paragraph to test viewEncapsulation</p>
+</div>
