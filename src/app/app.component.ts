@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent 
 {
   // remember ! is for strict class checking
-  employees: any[] ;
-  numbers: number[];
-  numbers2: number[];
-  
+   showOnlyEven = true;
+   evenNumbers: number[] ;
+  oddNumbers: number[];
+  @ViewChild('btnElement', {static: true}) btnElement! : ElementRef;
   constructor()
   {
-    this.employees = [{name: 'mohamed' , age : 15} , {name: 'ali' , age : 25} , {name: 'omar' , age : 20}]
-    this.numbers = [1,2,3,4, 6] ;
-    this.numbers2 = [7,8,9,10, 11] ;
+    this.evenNumbers = [2,4,6] ;
+    this.oddNumbers = [1,3,5] ;
   }
 
-  refreshAll()
+  toggle()
   {
-    this.employees = [{name: 'mohamed' , age : 15} , {name: 'ali' , age : 25} , {name: 'omar' , age : 20} , {name: 'Samy' , age : 30}];
-    this.numbers2 = [7,8,9,10, 11] ;
+
+    let name = (this.showOnlyEven? 'show Even' : 'show Odd') ;
+    this.showOnlyEven = ! this.showOnlyEven ;
+    console.log(name);
+    this.btnElement.nativeElement.textContent = name ;
   }
   
-  trackEmployees (index: number , element: {name: string , age: number})
-  {
-    console.log('track index is called') ;
-
-    console.log('number is:' + element.name + '----' + 'index is ' + index );
-  }
   
 
 }
