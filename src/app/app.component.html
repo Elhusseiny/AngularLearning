@@ -1,3 +1,5 @@
+
+<button (click)= "refreshAll()">Refresh All</button>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -6,7 +8,24 @@
         >Only show odd numbers</button>
       <br><br>
       <ul class="list-group">
-        <li *ngFor = "let number of numbers"
+        <li *ngFor = "let emp of employees; let i = index ; trackBy: trackEmployees"
+          class="list-group-item">
+          {{emp.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--using trackBy-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        >Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <li *ngFor = "let number of numbers2;"
           class="list-group-item">
           {{number}}
         </li>
