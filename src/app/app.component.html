@@ -9,6 +9,8 @@
       <br><br>
       <div *ngIf = "showOnlyEven ; else elseBlock" > <ul class="list-group">
         <li *ngFor = "let number of evenNumbers; let i = index ;"
+        [ngClass] = "{myClass: showOnlyEven}"
+        [ngStyle] = "{backgroundColor: showOnlyEven? 'black' : 'blue'}"
           class="list-group-item">
           {{number}}
         </li>

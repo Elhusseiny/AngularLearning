@@ -8,12 +8,14 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class AppComponent 
 {
   // remember ! is for strict class checking
-   showOnlyEven = true;
+   
+  showOnlyEven : boolean ;
    evenNumbers: number[] ;
   oddNumbers: number[];
   @ViewChild('btnElement', {static: true}) btnElement! : ElementRef;
   constructor()
   {
+    this.showOnlyEven = false ;
     this.evenNumbers = [2,4,6] ;
     this.oddNumbers = [1,3,5] ;
   }
